@@ -1,4 +1,5 @@
 pollutantmean <- function(directory, pollutant, id = 1:332) {
+    # 设置数据文件目录
     if (directory == "specdata") {
         # 数据文件目录
         directory <- "./specdata/"
@@ -13,9 +14,9 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     pollutant_all_vec <- c()
 
     # 遍历所需的所有数据文件
-    for (file in file_path_vec[id]) {
+    for (file_path in file_path_vec[id]) {
         # 读取 csv 格式的数据文件
-        df_csv <- read.csv(file,
+        df_csv <- read.csv(file_path,
                            header = TRUE,
                            sep = ',')
         # 过滤空数据，取出规定的污染物数据列
@@ -32,11 +33,22 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
 pollutantmean(directory = "specdata",
               pollutant = "sulfate",
               id = 1:10)
+# 4.064128
 
 pollutantmean(directory = "specdata",
               pollutant = "nitrate",
               id = 70:72)
+# 1.706047
+
+pollutantmean(directory = "specdata",
+              pollutant = "sulfate",
+              id = 34)
+# 1.477143
+
+pollutantmean("specdata", "nitrate")
+# 1.702932
 
 pollutantmean(directory = "specdata",
               pollutant = "nitrate",
               id = 23)
+# 1.280833
