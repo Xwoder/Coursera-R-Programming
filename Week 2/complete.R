@@ -1,5 +1,3 @@
-setwd("/Users/Xwoder/OneDrive/IdeaProjects/R_Programming/Week2/")
-
 complete <- function(directory, id = 1:332) {
     ## 'directory' is a character vector of length l indicating
     ## the location of the CSV files
@@ -15,7 +13,7 @@ complete <- function(directory, id = 1:332) {
     # where id' is the monitor ID number and 'nobs' is the
     # number of complete cases
 
-    # set working directory
+    # 设置数据文件目录
     if (directory == "specdata") {
         # 数据文件目录
         directory <- "./specdata/"
