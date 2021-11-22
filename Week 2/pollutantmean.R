@@ -51,4 +51,3 @@ pollutantmean("specdata", "nitrate")
 pollutantmean(directory = "specdata",
               pollutant = "nitrate",
               id = 23)
-# 1.280833
